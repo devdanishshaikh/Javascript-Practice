@@ -6,8 +6,23 @@
     <title>Project Cricket Game</title>
     <style>
       body {
+        margin-top: 100px;
         text-align: center;
         background-color: lightblue;
+      }
+      #btn {
+        padding: 10px 20px;
+        font-size: 20px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 100px;
+        height: 50px;
+        background-color: rgb(0, 97, 253);
+      }
+      #btn:hover {
+        background-color: rgb(16, 233, 244);
+        color: white;
       }
     </style>
   </head>
@@ -16,20 +31,126 @@
 
     <button
       id="btn"
-      onclick="console.log('You have chosen bat');
+      onclick="
+      const userChoiceMsg= 'User has chosen bat';
     //this will generate random number between 0 and 3
     let  randomNumber = Math.random() * 3;
+
+
+
+    // Determining computer's choice
+        let computerChoice;
     if(randomNumber >0 && randomNumber <=1 ){
-      let computerChoice = 'Bat';
+      computerChoice = 'Bat';
     }
+    else if(randomNumber >1 && randomNumber <=2 ){
+      computerChoice = 'Ball';
+    }
+    else{
+      computerChoice = 'Stump';
+    }
+
+    const computerChoiceMsg = `Computer has chosen ${computerChoice}`;
+
+    
+    // Deciding the winner
+    let resultMsg;
+    if(computerChoice === 'Bat'){
+      resultMsg = 'Match Drawn';
+    }
+    else  if(computerChoice === 'Ball'){
+      resultMsg = 'User Win';
+    }
+    else{
+      resultMsg = 'Computer Win';
+    }
+    alert(`${userChoiceMsg}\n${computerChoiceMsg}\n${resultMsg} `);
     "
     >
       Bat
     </button>
 
-    <button id="btn">Ball</button>
+    <button
+      id="btn"
+      onclick="
+      const user= 'User has chosen ball';
+    //this will generate random number between 0 and 3
+    let  randomNum = Math.random() * 3;
 
-    <button id="btn">Stump</button>
+
+
+    // Determining computer's choice
+        let computersChoice;
+    if(randomNum >0 && randomNum <=1 ){
+      computersChoice = 'Bat';
+    }
+    else if(randomNum >1 && randomNum <=2 ){
+      computersChoice = 'Ball';
+    }
+    else{
+      computersChoice = 'Stump';
+    }
+
+    const computersChoiceMsgs = `Computer has chosen ${computersChoice}`;
+
+    
+    // Deciding the winner
+    let resultsMsg;
+    if(computersChoice === 'Ball'){
+      resultsMsg = 'Match Drawn';
+    }
+    else  if(computersChoice === 'Bat'){
+      resultsMsg = 'Computer Win';
+    }
+    else{
+      resultsMsg = 'User  Win';
+    }
+    alert(`${user}\n${computersChoiceMsgs}\n${resultsMsg} `);
+    "
+    >
+      Ball
+    </button>
+
+    <button
+      id="btn"
+      onclick="
+      const users= 'User has chosen Stump';
+    //this will generate random number between 0 and 3
+    let  randomNums = Math.random() * 3;
+
+
+
+    // Determining computer's choice
+        let computersChooice;
+    if(randomNums >0 && randomNums <=1 ){
+      computersChooice = 'Bat';
+    }
+    else if(randomNums >1 && randomNums <=2 ){
+      computersChooice = 'Ball';
+    }
+    else{
+      computersChooice = 'Stump';
+    }
+
+    const computersChoiceMsge = `Computer has chosen ${computersChooice}`;
+
+    
+    // Deciding the winner
+    let resultsMsge;
+    if(computersChooice === 'Stump'){
+      resultsMsge = 'Match Drawn';
+    }
+    else  if(computersChooice === 'Bat'){
+      resultsMsge = 'User Win';
+    }
+    else{
+      resultsMsge = 'Computer Win';
+    }
+    alert(`${users}\n${computersChoiceMsge}\n${resultsMsge} `);
+    "
+    >
+      Stump
+    </button>
 
     <script>
       n;
